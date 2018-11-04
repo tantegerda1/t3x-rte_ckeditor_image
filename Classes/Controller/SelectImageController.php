@@ -59,8 +59,8 @@ class SelectImageController extends ElementBrowserController
     /**
      * Forward to infoAction if wanted
      *
-     * @param ServerRequestInterface $request
-     * @param ResponseInterface $response
+     * @param ServerRequestInterface $request the current request
+     * @return ResponseInterface the response with the content
      * @return NULL|ResponseInterface
      */
     public function mainAction(ServerRequestInterface $request): ResponseInterface
@@ -77,7 +77,7 @@ class SelectImageController extends ElementBrowserController
      * @return ResponseInterface the response with the content
      * @return NULL|ResponseInterface
      */
-    public function infoAction(ServerRequestInterface $request, ResponseInterface $response)
+    public function infoAction(ServerRequestInterface $request): ResponseInterface
     {
         $id = $request->getQueryParams()['id'];
         $params = $request->getQueryParams()['P'] ?: [];
