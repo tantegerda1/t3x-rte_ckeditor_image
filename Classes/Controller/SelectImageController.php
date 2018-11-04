@@ -63,7 +63,7 @@ class SelectImageController extends ElementBrowserController
      * @param ResponseInterface $response
      * @return NULL|ResponseInterface
      */
-    public function mainAction(ServerRequestInterface $request, ResponseInterface $response)
+    public function mainAction(ServerRequestInterface $request): ResponseInterface
     {
         return $this->isInfoAction
             ? $this->infoAction($request, $response)
