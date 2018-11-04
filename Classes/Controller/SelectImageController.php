@@ -73,8 +73,8 @@ class SelectImageController extends ElementBrowserController
     /**
      * Retrieve image info
      *
-     * @param ServerRequestInterface $request
-     * @param ResponseInterface $response
+     * @param ServerRequestInterface $request the current request
+     * @return ResponseInterface the response with the content
      * @return NULL|ResponseInterface
      */
     public function infoAction(ServerRequestInterface $request, ResponseInterface $response)
