@@ -187,7 +187,6 @@
                 size: Modal.sizes.large,
                 callback: function(currentModal) {
                     currentModal.find('iframe').on('load', function (e) {
-			$(this).contents().find('[data-close]').off('click');
 			$(this).contents().find('[data-close]').on('click', function(e) {
 				e.stopImmediatePropagation();
 							
