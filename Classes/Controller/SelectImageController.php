@@ -110,7 +110,7 @@ class SelectImageController extends ElementBrowserController
             ]
         ]);
 
-        return null;
+        exit();
     }
 
     /**
