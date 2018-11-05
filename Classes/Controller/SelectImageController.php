@@ -79,7 +79,7 @@ class SelectImageController extends ElementBrowserController
      */
     public function infoAction(ServerRequestInterface $request): ResponseInterface
     {
-        $id = $request->getQueryParams()['id'];
+        $id = $request->getQueryParams()['sysfile'];
         $params = $request->getQueryParams()['P'] ?: [];
         if (!$id || !is_numeric($id)) {
             HttpUtility::setResponseCodeAndExit(HttpUtility::HTTP_STATUS_412);
