@@ -187,18 +187,17 @@
                 size: Modal.sizes.large,
                 callback: function(currentModal) {
                     currentModal.find('iframe').on('load', function (e) {
-                        e.currentTarget.contentWindow.opener = {
-                            focus: function () {
-                                editor.focus();
-                            },
-                            top: window.top,
-                            onSelected: function(editorName, table, uid, type) {
-                                if (editorName === editor.name) {
-                                    $modal.modal('hide');
-                                    deferred.resolve(table, uid);
-                                }
-                            }
-                        };
+						$(this).contents().find('[data-close]').off('click');
+						$(this).contents().find('[data-close]').on('click', function(e) {
+							e.stopImmediatePropagation();
+							
+                            $modal.modal('hide');
+							editor.focus();
+							
+							var elements = $(this).closest('body').data("elements");
+							var element = elements['file_' + $(this).data('fileIndex')];
+                            deferred.resolve(element.table, element.uid);	
+						});
                     });
                 }
             });
