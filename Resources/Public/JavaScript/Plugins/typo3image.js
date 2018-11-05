@@ -193,7 +193,7 @@
 				$modal.modal('hide');
 				editor.focus();
 							
-				var elements = $(this).closest('body').data("elements");
+				var elements = $(this).closest('body').data('elements');
 				var element = elements['file_' + $(this).data('fileIndex')];
 				deferred.resolve(element.table, element.uid);	
 			});
