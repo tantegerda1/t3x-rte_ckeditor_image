@@ -145,7 +145,7 @@
         var url = routeUrl
             + (routeUrl.indexOf('?') === -1 ? '?' : '&')
             + 'action=info'
-            + '&id=' + encodeURIComponent(uid)
+            + '&sysfile=' + encodeURIComponent(uid)
             + '&table=' + encodeURIComponent(table);
 
         return $.getJSON(url);
